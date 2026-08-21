@@ -43,6 +43,27 @@ int main() {
 
         args[argc] = NULL;
 
+        if (strcmp(args[0], "cd") == 0) {
+            if (argc < 2) {
+                // cd with no argument -> go to HOME
+                char *home = getenv("HOME");
+
+                if (home == NULL) {
+                    fprintf(stderr, "cd: HOME not set\n");
+                } else if (chdir(home) != 0) {
+                    perror("cd");
+                }
+            } else if (argc > 2) {
+                fprintf(stderr, "cd: too many arguments\n");
+            } else {
+                if (chdir(args[1]) != 0) {
+                    perror("cd");
+                }
+            }
+
+            continue;
+        }
+
         pid_t pid = fork();
 
         if (pid < 0) {
