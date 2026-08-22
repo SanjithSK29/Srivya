@@ -19,6 +19,9 @@ int ls(){
   }
 }
 */
+typedef int (*builtin_func)(char **args);
+
+
 
 int main() {
     char input[1024];
