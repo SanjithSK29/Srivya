@@ -1,6 +1,6 @@
-# Linux System Programming Projects
+# Srivya
 
-This repository contains various Linux system programming exercises and implementations. It is an ongoing project with regular additions.
+This repository contains a custom shell implementation supporting various basic commands of the shell. It's an ongoing project.
 
 ## Overview
 
